@@ -1,0 +1,86 @@
+#pbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#pbtn>div{
+    position: absolute;
+    border-radius: 10px;
+}
+#pbtn>div.green{
+    height: 45px;
+    width: 45px;
+    background-color: var(--m1);
+    /* animation: playing 5s infinite linear; */
+}
+#pbtn>div.purple{
+    height: 35px;
+    width: 35px;
+    background-color: var(--m2);
+    /* animation: playing_back 5s infinite linear; */
+}
+
+@keyframes playing{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes playing_back{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+
+@media only screen and (max-device-width: 850px){
+    #pbtn>div.green{
+        height: 95px;
+        width: 95px;
+        background-color: var(--m1);
+        /* animation: playing 5s infinite linear; */
+    }
+    #pbtn>div.purple{
+        height: 70px;
+        width: 70px;
+        background-color: var(--m2);
+        /* animation: playing_back 5s infinite linear; */
+    }
+
+    #pbtn>div{
+        position: absolute;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    #pbtn>div.green{
+        height: 45px;
+        width: 45px;
+        background-color: var(--m1);
+        /* animation: playing 5s infinite linear; */
+    }
+    #pbtn>div.purple{
+        height: 35px;
+        width: 35px;
+        background-color: var(--m2);
+        /* animation: playing_back 5s infinite linear; */
+    }
+
+    #pbtn>div{
+        position: absolute;
+        border-radius: 10px;
+    }
+}
