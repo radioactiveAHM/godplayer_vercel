@@ -16,7 +16,8 @@ export default function Root() {
     <Html lang="en">
       <Head>
         <Meta charset="utf-8" />
-        <Meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </Head>
       <Body>
         <ErrorBoundary>
