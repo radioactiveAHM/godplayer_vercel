@@ -2154,10 +2154,17 @@ sirv@^2.0.2:
     mrmime "^1.0.0"
     totalist "^3.0.0"
 
-solid-js@^1.3, solid-js@^1.3.17, solid-js@^1.5.3, solid-js@^1.6.0, "solid-js@>= 1.0", solid-js@>=1.4.0:
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/solid-js/-/solid-js-1.6.0.tgz"
-  integrity sha512-db5s65ErgZnBhapPx77qauzul8akHlMCvirS+Y86U4abMa3uizMVNW9ql3UxbO0yMzMGNpFJwUiOlXmJCbwVpA==
+solid-heroicons@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/solid-heroicons/-/solid-heroicons-3.1.1.tgz"
+  integrity sha512-wfU/SqxqxWxInvfFlKJfCBPnJ94Zq1GQFiFL3M0KwZzT81lSF5yIC4HA/Czp3DYrn+dUumjO0qdrx8Ab3cy2sA==
+  dependencies:
+    solid-js "^1.6.2"
+
+solid-js@^1.3, solid-js@^1.3.17, solid-js@^1.5.3, solid-js@^1.6.0, solid-js@^1.6.2, "solid-js@>= 1.0", solid-js@>=1.4.0:
+  version "1.6.11"
+  resolved "https://registry.npmjs.org/solid-js/-/solid-js-1.6.11.tgz"
+  integrity sha512-JquQQHPArGq+i2PLURxJ99Pcz2/1docpbycSio/cKSA0SeI3z5zRjy0TNcH4NRYvbOLrcini+iovXwnexKabyw==
   dependencies:
     csstype "^3.1.0"
 

@@ -1,4 +1,5 @@
 #pbtn{
+    margin-right: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,16 +10,18 @@
     border-radius: 10px;
 }
 #pbtn>div.green{
-    height: 45px;
-    width: 45px;
+    height: 100%;
+    width: 100%;
     background-color: var(--m1);
-    /* animation: playing 5s infinite linear; */
+    animation: playing 5s infinite linear;
+    animation-play-state: paused;
 }
 #pbtn>div.purple{
-    height: 35px;
-    width: 35px;
+    height: 75%;
+    width: 75%;
     background-color: var(--m2);
-    /* animation: playing_back 5s infinite linear; */
+    animation: playing_back 5s infinite linear;
+    animation-play-state: paused;
 }
 
 @keyframes playing{
@@ -41,46 +44,5 @@
     }
     100%{
         transform: rotate(-360deg);
-    }
-}
-
-
-@media only screen and (max-device-width: 850px){
-    #pbtn>div.green{
-        height: 95px;
-        width: 95px;
-        background-color: var(--m1);
-        /* animation: playing 5s infinite linear; */
-    }
-    #pbtn>div.purple{
-        height: 70px;
-        width: 70px;
-        background-color: var(--m2);
-        /* animation: playing_back 5s infinite linear; */
-    }
-
-    #pbtn>div{
-        position: absolute;
-        border-radius: 20px;
-    }
-}
-
-@media only screen and (max-width: 850px){
-    #pbtn>div.green{
-        height: 45px;
-        width: 45px;
-        background-color: var(--m1);
-        /* animation: playing 5s infinite linear; */
-    }
-    #pbtn>div.purple{
-        height: 35px;
-        width: 35px;
-        background-color: var(--m2);
-        /* animation: playing_back 5s infinite linear; */
-    }
-
-    #pbtn>div{
-        position: absolute;
-        border-radius: 10px;
     }
 }

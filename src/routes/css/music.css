@@ -76,52 +76,18 @@
     font-size: 1rem;
     text-align: center;
 }
-
-audio{
-    width: 95%;
+.songs>ol.containerwin>li>p::-webkit-scrollbar{
+    display: none;
 }
-
-@media only screen and (max-device-width: 850px){
+@media only screen and (max-device-width: 600px){
     .songs>ol>li>img{
-        /* background-color: red; */
-        padding: 3px;
         width: 20%;
     }
-    .songs>ol>li>p{
-        font-size: 2rem;
-    }
-    .show>*{
-        /* font-size: 1.5rem; */
-        width: 25px;
-        height: 25px;
-    }
-
     .songs>ol.containerwin>li{
         width: 33.3%;
     }
     .songs>ol.containerwin>li>p{
-        font-size: 2rem;
-    }
-}
-@media only screen and (max-width: 850px){
-    .songs>ol>li>img{
-        /* background-color: red; */
-        padding: 3px;
-        width: 20%;
-    }
-    .songs>ol>li>p{
-        font-size: 1rem;
-    }
-    .show>*{
-        /* font-size: 1.5rem; */
-        width: 25px;
-        height: 25px;
-    }
-
-    .songs>ol.containerwin>li{
-        width: 33.3%;
-    }
-    .songs>ol.containerwin>li>p{
-        font-size: 0.6rem;
+        overflow: auto;
+        max-height: 60px;
     }
 }

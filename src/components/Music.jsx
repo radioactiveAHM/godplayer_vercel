@@ -1,6 +1,9 @@
 import { createSignal, onMount } from "solid-js"
 import Player from "./player/Player";
 
+import { Icon } from "solid-heroicons";
+import {bars_3} from "solid-heroicons/solid-mini"
+
 function Music(){
     const [musics, SetMusics] = createSignal(JSON.parse("[\"DBMK - City.mp3\",\"Gorillaz - Feel Good Inc..mp3\",\"LSD ft. Sia & Diplo & Labrinth - Audio.mp3\",\"Post Malone - Circles.mp3\",\"SALES - Pope Is a Rockstar.mp3\",\"Swedish House Mafia, The Weeknd - Moth To A Flame (with The Weeknd).mp3\",\"The Weeknd - Blinding Lights.mp3\",\"The Weeknd - Call Out My Name.mp3\",\"Trevor Daniel - Falling.mp3\"]"));
     const [current, SetCurrent] = createSignal("");
@@ -21,8 +24,8 @@ function Music(){
         document.getElementById("ap").play();
     }
 
-    function ShowAction(){
-        const s = document.getElementById("show").style;
+    function ShowAction(Event){
+        const s = Event.target.style;
         if (listing()==0){
             SetListing(1);
             s.transform = "rotate(90deg)";
@@ -91,7 +94,7 @@ function Music(){
                         <div></div>
                         <div></div>
                     </div>
-                    <button id="show" onclick={ShowAction}>►</button>
+                    <Icon onclick={ShowAction} path={bars_3}/>
                 </div>
                 <ol onLoad={()=>console.log("nigga")} class={listing()==0 ? "none" : "containerwin"}>
                     <For each={musics()}>
@@ -105,7 +108,6 @@ function Music(){
                 </ol>
             </div>
             <Player al={current() ? server+"/music/"+current() : ""} next={next_s} back={back_s} ml={musics}/>
-            {/* <audio src={current() ? server+"/music/"+current() : ""} controls></audio> */}
         </div>
     )
 }

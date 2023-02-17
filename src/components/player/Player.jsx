@@ -1,15 +1,14 @@
+// icons
+import { Icon } from "solid-heroicons";
+import {chevronLeft, chevronRight} from "solid-heroicons/solid-mini"
+
 function Player(income){
     function pbtnAction(){
         const playing = document.getElementById("ap");
-        const pbtn = document.getElementById("pbtn");
         if (playing.paused){
             playing.play();
-            pbtn.children[0].style.animation = "playing 5s infinite linear"
-            pbtn.children[1].style.animation = "playing_back 5s infinite linear"
         }else{
             playing.pause();
-            pbtn.children[0].style.animation = "unset";
-            pbtn.children[1].style.animation = "unset";
         }
     }
     function playerAction(){
@@ -31,8 +30,8 @@ function Player(income){
     }
     function endedAction(){
         const pbtn = document.getElementById("pbtn");
-        pbtn.children[0].style.animation = "unset";
-        pbtn.children[1].style.animation = "unset";
+        pbtn.children[0].style.animationPlayState = "paused";
+        pbtn.children[1].style.animationPlayState = "paused";
     }
 
 
@@ -56,8 +55,9 @@ function Player(income){
 
     function playAction(Event){
         const pbtn = document.getElementById("pbtn");
-        pbtn.children[0].style.animation = "playing 5s infinite linear"
-        pbtn.children[1].style.animation = "playing_back 5s infinite linear"
+        // animation-play-state: paused;
+        pbtn.children[0].style.animationPlayState = "running";
+        pbtn.children[1].style.animationPlayState = "running";
 
         const name = Event.target.currentSrc.split("/").pop().replaceAll("%20", " ").split(".")[0];
         for (let li_e of document.getElementsByClassName("win")){
@@ -77,20 +77,30 @@ function Player(income){
             }
         }
     }
+    function pauseAction(){
+        const pbtn = document.getElementById("pbtn");
+        // animation-play-state: paused;
+        pbtn.children[0].style.animationPlayState = "paused";
+        pbtn.children[1].style.animationPlayState = "paused";
+    }
     return(
         <div class="player">
-        <audio src={income.al} id="ap" onPlay={playAction} onEnded={endedAction} onTimeUpdate={playerAction}></audio>
+        <audio src={income.al} id="ap" 
+        onPlay={playAction} onEnded={endedAction} onTimeUpdate={playerAction} onPause={pauseAction}
+        ></audio>
         <div id="pbtn" onclick={pbtnAction}>
             <div class="green"></div>
             <div class="purple"></div>
             <div class="state"><h1></h1></div>
         </div>
-        <div class="controller">
-            <div class="back_for" onclick={next_s}><h2>◄</h2></div>
-            <div id="timebar" onclick={timebarAction}><div id="bar"></div></div>
-            <div id="dur">0:0</div>
-            <div class="back_for" onclick={back_s}><h2>►</h2></div>
+        <div class="back_for" onclick={next_s}>
+            <Icon path={chevronLeft}/>
         </div>
+        <div id="timebar" onclick={timebarAction}><div id="bar"></div></div>
+        <div class="back_for" onclick={back_s}>
+            <Icon path={chevronRight}/>
+        </div>
+        <div id="dur">0:0</div>
         </div>
     )
 }
